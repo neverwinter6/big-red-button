@@ -71,6 +71,10 @@ It returns `{ article, meta }`, where `article` contains the title, description,
 └── .vercelignore   # Keeps local test files out of deployments
 ```
 
+## AI assistance
+
+AI was used to help code the frontend. AI-assisted changes were reviewed and tested locally before being included.
+
 ## Credits
 
 - Article text and lead images come from [Wikipedia](https://www.wikipedia.org/) and are available under the [Creative Commons Attribution-ShareAlike 4.0 licence](https://creativecommons.org/licenses/by-sa/4.0/). Each article links back to its source for full attribution.
