@@ -1,0 +1,9 @@
+.tmp/
+.git/
+.vercel/
+.env*
+.DS_Store
+Thumbs.db
+node_modules/
+.wakatime-project
+dev-server.mjs

@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#f4eee3">
+
+  <title>The Big Red Button — a random informative article</title>
+  <meta name="description" content="One big red button. Every press opens a different, genuinely informative article from Wikipedia's best. No feed, no algorithm, no doomscroll — just curiosity.">
+  <meta name="author" content="The Big Red Button">
+  <link rel="canonical" href="https://big-red-button-phi.vercel.app/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="The Big Red Button">
+  <meta property="og:url" content="https://big-red-button-phi.vercel.app/">
+  <meta property="og:title" content="The Big Red Button">
+  <meta property="og:description" content="Press it. Learn something unexpected. A different informative article every time.">
+  <meta property="og:image" content="https://big-red-button-phi.vercel.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="A big red button surrounded by orbit lines, with the words Learn something unexpected.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Big Red Button">
+  <meta name="twitter:description" content="Press it. Learn something unexpected. A different informative article every time.">
+  <meta name="twitter:image" content="https://big-red-button-phi.vercel.app/og-image.png">
+  <meta name="twitter:image:alt" content="A big red button surrounded by orbit lines, with the words Learn something unexpected.">
+  <meta property="og:image:type" content="image/png">
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="grain" aria-hidden="true"></div>
+  <div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="/" id="brandHome" aria-label="The Big Red Button — home">
+      <span class="brand-mark" aria-hidden="true"><span></span></span>
+      <span class="brand-wordmark">The Big Red Button</span>
+    </a>
+    <div class="header-meta">
+      <span class="header-tagline">A serendipity engine</span>
+      <span class="header-rule" aria-hidden="true"></span>
+      <button class="about-button" id="aboutButton" type="button" aria-expanded="false" aria-controls="aboutPanel">About</button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="home is-active" id="homeView" aria-labelledby="heroTitle">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> One press. One rabbit hole.</p>
+        <h1 id="heroTitle">Learn something<br><em>unexpected.</em></h1>
+        <p class="lede">Every press opens a different, genuinely informative article from the better corners of Wikipedia. Handpicked by luck — not an algorithm.</p>
+
+        <div class="home-actions">
+          <p class="keyboard-hint">Hit <kbd>Space</kbd><span class="hint-divider" aria-hidden="true">/</span>no feed, no account, no algorithm</p>
+        </div>
+
+        <dl class="stats">
+          <div>
+            <dt>Source</dt>
+            <dd>Wikipedia</dd>
+          </div>
+          <div>
+            <dt>Quality</dt>
+            <dd>Featured&nbsp;&amp;&nbsp;good</dd>
+          </div>
+          <div>
+            <dt>Algorithms</dt>
+            <dd>Zero</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="button-stage">
+        <div class="stage-decor" aria-hidden="true">
+        <div class="orbit orbit--outer"></div>
+        <div class="orbit orbit--dashed"></div>
+        <div class="orbit orbit--inner"></div>
+
+        <span class="topic topic--history">History</span>
+        <span class="topic topic--science">Science</span>
+        <span class="topic topic--culture">Culture</span>
+        <span class="topic topic--nature">Nature</span>
+
+        <span class="stage-caption"><span class="stage-caption-line" aria-hidden="true"></span> guaranteed<sup>*</sup> to be a tangent</span>
+        </div>
+
+        <button class="press-button press-button--hero" id="pressButton" type="button" aria-label="Press the big red button to open a random informative article">
+          <span class="button-gloss" aria-hidden="true"></span>
+          <span class="press-button-copy">
+            <span class="press-button-label">Press</span>
+            <span class="press-button-sub">for serendipity</span>
+          </span>
+        </button>
+      </div>
+
+      <p class="stage-footnote" aria-hidden="true"><sup>*</sup> Not statistically guaranteed. Extremely likely, though.</p>
+    </section>
+
+    <section class="reader" id="readerView" aria-labelledby="articleTitle" hidden>
+      <div class="reader-bar">
+        <button class="back-button" id="backButton" type="button">
+          <span class="back-arrow" aria-hidden="true">←</span> New discovery
+        </button>
+        <p class="issue-number" id="issueNumber">No. 001</p>
+      </div>
+
+      <article class="article">
+        <header class="article-header">
+          <p class="article-kicker">
+            <span id="articleSource">Featured article</span>
+            <span class="kicker-dot" aria-hidden="true"></span>
+            <span id="articleReadTime">4 min read</span>
+          </p>
+          <h1 id="articleTitle" tabindex="-1"></h1>
+          <p class="article-dek" id="articleDescription"></p>
+        </header>
+
+        <figure class="article-figure" id="articleFigure" hidden>
+          <div class="figure-frame">
+            <img id="articleImage" alt="" width="1200" height="800" loading="eager">
+          </div>
+          <figcaption id="articleCaption"></figcaption>
+        </figure>
+
+        <div class="article-body">
+          <div class="article-copy" id="articleBody"></div>
+
+          <aside class="source-note">
+            <p class="source-overline">Keep going</p>
+            <p class="source-title">This is only the beginning of the article.</p>
+            <p class="source-copy">Read the full piece, with its sources and footnotes, on Wikipedia.</p>
+            <a class="source-link" id="sourceLink" href="https://en.wikipedia.org/" target="_blank" rel="noopener noreferrer">
+              Read the full article <span aria-hidden="true">↗</span>
+            </a>
+          </aside>
+        </div>
+
+        <footer class="article-footer">
+          <p>Text from Wikipedia, available under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a> licence. Images via Wikimedia Commons.</p>
+          <button class="next-button" id="nextButton" type="button">
+            <span class="next-button-label">Another one</span>
+            <kbd class="next-button-key" aria-hidden="true">N</kbd>
+            <span class="next-button-icon" aria-hidden="true">↗</span>
+          </button>
+        </footer>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Built for the curious.</p>
+    <p class="footer-rights">Knowledge is a public good. <a href="https://github.com/neverwinter6/big-red-button" id="githubLink" target="_blank" rel="noopener noreferrer">Source on GitHub ↗</a></p>
+  </footer>
+
+  <div class="loading-overlay" id="loadingOverlay" hidden>
+    <div class="loading-inner" role="status" aria-live="polite">
+      <span class="loading-orb" aria-hidden="true"></span>
+      <p class="loading-title">Consulting the encyclopedia<span class="loading-dots" aria-hidden="true"></span></p>
+      <p class="loading-sub" id="loadingSub">Somewhere between a medieval duel and a deep-sea worm…</p>
+    </div>
+  </div>
+
+  <aside class="about-panel" id="aboutPanel" hidden>
+    <div class="about-card" role="dialog" aria-modal="true" aria-labelledby="aboutTitle">
+      <button class="about-close" id="aboutClose" type="button" aria-label="Close about panel">×</button>
+      <p class="about-overline">The premise</p>
+      <h2 id="aboutTitle">A small protest against the infinite scroll.</h2>
+      <p>The internet is very good at showing you more of the same thing. This is the opposite: one button, one tangent, one article at a time.</p>
+      <p>Every press asks our small backend for a random article from Wikipedia's <a href="https://en.wikipedia.org/wiki/Wikipedia:Featured_articles" target="_blank" rel="noopener noreferrer">featured</a> and <a href="https://en.wikipedia.org/wiki/Wikipedia:Good_articles" target="_blank" rel="noopener noreferrer">good article</a> collections. That means the writing has been reviewed, the facts are sourced, and the subject is almost certainly something you weren't looking for.</p>
+      <p>No tracking. No accounts. No recommendation engine. Your browsing memory stays in your browser, only so you don't get the same article twice.</p>
+      <p class="about-signoff">— The management</p>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <noscript>
+    <div class="noscript">
+      <p><strong>The button needs JavaScript.</strong> That's the one thing it can't do without. You can still <a href="https://en.wikipedia.org/wiki/Special:RandomInCategory/Featured_articles">find a random featured article on Wikipedia</a>.</p>
+    </div>
+  </noscript>
+
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

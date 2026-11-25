@@ -1,0 +1,13 @@
+{
+  "name": "big-red-button",
+  "version": "1.2.0",
+  "private": true,
+  "description": "A big red button that opens a random informative Wikipedia article.",
+  "scripts": {
+    "dev": "node dev-server.mjs",
+    "start": "node dev-server.mjs"
+  },
+  "engines": {
+    "node": "24.x"
+  }
+}
